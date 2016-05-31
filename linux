@@ -17,3 +17,37 @@ export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AAPT_HOME/23.0.3/a
 # exchang java 
 
 update-alternatives --config java
+
+
+
+ 4.配置默认JDK(一般情况下这一步都可以省略)
+
+由于一些Linux的发行版中已经存在默认的JDK，如OpenJDK等。所以为了使得我们刚才安装好的JDK版本能成为默认的JDK版本，我们还要进行下面的配置。
+执行下面的命令：
+
+sudo update-alternatives --install /usr/bin/java java /usr/local/java/jdk1.7.0/bin/java 300
+sudo update-alternatives --install /usr/bin/javac javac /usr/local/java/jdk1.7.0/bin/javac 300
+sudo update-alternatives --install /usr/bin/jar jar /usr/local/java/jdk1.7.0/bin/jar 300
+sudo update-alternatives --install /usr/bin/jcontrol jcontrol /usr/local/java/jdk1.7.0/bin/jcontrol 300
+sudo update-alternatives --install /usr/bin/jps jps /usr/local/java/jdk1.7.0/bin/jps 300
+
+ 注意：如果以上两个命令出现找不到路径问题，只要重启一下计算机在重复上面两行代码就OK了。
+
+也可以使用update-alternatives --remove命令，删除路径配置，如下：
+
+sudo update-alternatives --remove javac /usr/local/java/jdk1.7.0/bin/javac
+
+执行下面的代码可以看到当前各种JDK版本和配置：
+
+sudo update-alternatives --config java
+
+打开一个终端，输入下面命令： 
+5.测试
+
+java -version
+
+显示结果：
+
+java version "1.7.0_80"
+Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
+Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
