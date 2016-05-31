@@ -1,3 +1,36 @@
+ 1.下载JDK
+
+Linux操作系统是：Centos6.5-x64
+
+目前最新的JDK版本是：Java SE Development Kit 7u80
+
+下载地址：http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz
+
+查看最新：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+所有的版本归档下载地址：http://www.oracle.com/technetwork/java/javase/archive-139210.html
+2.解压安装
+
+我们把JDK安装到这个路径：/usr/local/java
+如果没有这个目录（第一次当然没有），我们就新建一个目录
+
+cd /usr/local
+sudo mkdir java
+
+
+建立好了以后，我们来到刚才下载好的压缩包的目录，解压到我们刚才新建的文件夹里面去，并且修改好名字方便我们管理
+
+sudo tar zxvf ./jdk-7u80-linux-x64.tar.gz  -C /usr/local/java
+cd /usr/local/java
+sudo mv jdk1.7.0_80 jdk1.7.0
+
+3.配置环境变量
+
+vi ~/.bash_profile
+
+
+在打开的文件的末尾添加 
+
 #set java environment
 export JAVA_HOME=/home/lambert/Java/jdk1.8.0_91
 
