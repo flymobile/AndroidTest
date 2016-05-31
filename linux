@@ -1,0 +1,16 @@
+#set java environment
+export JAVA_HOME=/home/lambert/Java/jdk1.8.0_91
+
+export JRE_HOME=/home/lambert/Java/jdk1.8.0_91/jre
+
+export CLASSPATH=.:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+
+# export JAVA_OPTS=-server -Xms768m -Xmx768m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m
+
+export ANDROID_HOME=/home/lambert/Android/android-sdk-linux
+export AAPT_HOME=/home/lambert/Android/android-sdk-linux/build-tools
+export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AAPT_HOME/23.0.3/aapt:$PATH
+
+
