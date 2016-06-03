@@ -21,7 +21,7 @@
 * 
 
 #时间：定义出什么时候要进行at的任务，格式有：#
- # 1、HH:MM# 
+# 1、HH:MM# 
 * 说明：在今日的 HH:MM 时刻进行，若该时刻已超过，则明天的 HH:MM 进行此任务。
 * ex> 04:00
 
@@ -40,4 +40,4 @@
 * ex> now + 5 minutes
 * ex> 04pm + 3 days
 
-* [linux/centos定时任务at指令详解](http://www.2cto.com/os/201409/336183.html) —— linux/centos定时任务at指令详解参考网站
+# [linux/centos定时任务at指令详解](http://www.2cto.com/os/201409/336183.html) —— linux/centos定时任务at指令详解参考网站#
