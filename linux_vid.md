@@ -39,3 +39,16 @@
 *root@janny-linux:/home/janny/Android# sudo service udev restart*
 
 *root@janny-linux:/home/janny/Android# *
+
+
+
+##99-vmware-scsi-udev.rules##
+               # VMware SCSI devices Timeout adjustment
+               #
+               # Modify the timeout value for VMware SCSI devices so that
+               # in the event of a failover, we don't time out.
+               # See Bug 271286 for more information.
+
+               ACTION=="add", SUBSYSTEMS=="scsi", ATTRS{vendor}=="VMware, ", ATTRS{model}=="VMware Virtual S", RUN+="/bin/sh -c 'echo 180 >/sys$DEVPATH/timeout'"
+
+               SUBSYSTEM=="usb", ATTRS{idVendor}=="1782",ATTRS{idProduct}=="5d24", MODE="0666"
