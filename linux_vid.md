@@ -1,7 +1,7 @@
 #Con't connect ADB with Linux system#
 ##code ##
 
-janny@janny-linux:~/Android$ ls
+*janny@janny-linux:~/Android$ ls
 99-vmware-scsi-udev.rules                      android-sdk-linux
 android-cts-6.0_r7-linux_x86-arm.zip           android-sdk-linux.zip
 android-cts-verifier-6.0_r7-linux_x86-arm.zip  android-xts-2782496.zip
