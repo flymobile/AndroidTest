@@ -1,4 +1,5 @@
 #Con't connect ADB with Linux system#
+##code ##
 
 janny@janny-linux:~/Android$ ls
 99-vmware-scsi-udev.rules                      android-sdk-linux
