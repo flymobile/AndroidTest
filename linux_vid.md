@@ -1,20 +1,16 @@
-#Con't connect ADB with Linux system#
-##command in linux ##
+#Linux系统无法连接ADB，由于设备VID未添加#
+##命令行如下： ##
+####拷贝文件至./etc/ude/rules.d/目录####
 
-    janny@janny-linux:~/Android$ cp 99-vmware-scsi-udev.rules  ./etc/ude/rules.d/
-    cp: 无法创建普通文件'./etc/ude/rules.d/': 没有那个文件或目录
-    janny@janny-linux:~/Android$ sudo cp 99-vmware-scsi-udev.rules ./etc/ude/rules.d/
-    [sudo] janny 的密码： 
-    cp: 无法创建普通文件'./etc/ude/rules.d/': 没有那个文件或目录
-    janny@janny-linux:~/Android$ cp 99-vmware-scsi-udev.rules /etc/udev/rules.d/
-    cp: 无法创建普通文件'/etc/udev/rules.d/99-vmware-scsi-udev.rules': 权限不够
     janny@janny-linux:~/Android$ sudo su
     root@janny-linux:/home/janny/Android# cp 99-vmware-scsi-udev.rules /etc/udev/rules.d/
-    root@janny-linux:/home/janny/Android# chrom a+r 99-vmware-scsi-udev.rules 
-    chrom：未找到命令
+    
+####添加权限####
+    
     root@janny-linux:/home/janny/Android# sudo chmod a+r 99-vmware-scsi-udev.rules 
-    root@janny-linux:/home/janny/Android# sudo serverice udev restart
-    sudo: serverice：找不到命令
+
+####重启服务####
+
     root@janny-linux:/home/janny/Android# sudo service udev restart
 
 
