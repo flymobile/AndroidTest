@@ -10,34 +10,38 @@
 * -f ：后面加<文件> 从指定文件读入任务而不是从标准输入读入
 * -t ：后面<时间参数> 以时间参数的形式提交要运行的任务
 
-# 查询删除当前待执行任务#
+### 查询删除当前待执行任务#
 * 查询当前的等待任务，被执行之后就不会显示
 * # atq
 * 
 
-# 删除系统中由at建立的正在等待被执行的任务#
+### 删除系统中由at建立的正在等待被执行的任务#
 * # atrm 任务的工作号
 * 例如：# atrm 17
 * 
 
-#时间：定义出什么时候要进行at的任务，格式有：#
-# 1、HH:MM# 
+####时间：定义出什么时候要进行at的任务，格式有：#
+##### 1、HH:MM# 
 * 说明：在今日的 HH:MM 时刻进行，若该时刻已超过，则明天的 HH:MM 进行此任务。
 * ex> 04:00
 
-# 2、HH:MM YYYY-MM-DD# 
+##### 2、HH:MM YYYY-MM-DD# 
 * 说明：规定在某年某月的某一天的特殊时刻进行该项任务
 * ex> 04:00 2009-03-17
 * 
 
-# 3、HH:MM[am|pm] [Month] [Date]# 
+##### 3、HH:MM[am|pm] [Month] [Date]# 
 * 说明：规定在某年某月某日的某时刻进行该项任务
 * ex> 04pm March 17
 *
 
-# 4、HH:MM[am|pm] + number [minutes|hours|days|weeks]# 
+##### 4、HH:MM[am|pm] + number [minutes|hours|days|weeks]# 
 * 说明：规定在某个时间点再加多少时间后才进行该项任务
 * ex> now + 5 minutes
 * ex> 04pm + 3 days
 
-# [linux/centos定时任务at指令详解](http://www.2cto.com/os/201409/336183.html) —— linux/centos定时任务at指令详解参考网站#
+##### [linux/centos定时任务at指令详解](http://www.2cto.com/os/201409/336183.html) —— linux/centos定时任务at指令详解参考网站#
+
+
+##定时关机
+   echo "/sbin/shutdown -r now" |at 00:00 tomorro
