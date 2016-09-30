@@ -43,5 +43,9 @@
 ##### [linux/centos定时任务at指令详解](http://www.2cto.com/os/201409/336183.html) —— linux/centos定时任务at指令详解参考网站#
 
 
-##定时关机
+## 定时关机
+### 1.直接在终端中输入：
+
    echo "/sbin/shutdown -r now" |at 00:00 tomorro
+### 2.指定某一时间时期
+   echo "/sbin/shutdown -r now" |at 00:00 2016-10-03
