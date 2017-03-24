@@ -14,6 +14,7 @@
 
 官方下载地址：[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
+![screen](https://raw.githubusercontent.com/flymobile/AndroidTest/master/picture/linux_jdk.png)
 
 ####  2.解压安装
 
@@ -56,6 +57,8 @@ sudo tar zxvf ./jdk-7u80-linux-x64.tar.gz  -C ./java
 ### Android SDK 安装
 
 国内下载[http://tools.android-studio.org/index.php/sdk](http://tools.android-studio.org/index.php/sdk)
+
+![screen](https://raw.githubusercontent.com/flymobile/AndroidTest/master/picture/linux_sdk.png)
 
 *  下载最新SDK 并解压至Android目录
 
