@@ -1,86 +1,81 @@
- 1.下载JDK
+## Linux系统安装
+ 
+* Linux系统下载： [http://cn.ubuntu.com/download/](http://cn.ubuntu.com/download/)
+ 
+### JDK 安装
 
-Linux操作系统是：Centos6.5-x64
+#### 1.最新的JDK版本是：Java SE Development Kit 8u121
 
-目前最新的JDK版本是：Java SE Development Kit 7u80
+官方下载地址：[http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
 
-下载地址：http://download.oracle.com/otn-pub/java/jdk/7u80-b15/jdk-7u80-linux-x64.tar.gz
 
-查看最新：http://www.oracle.com/technetwork/java/javase/downloads/index.html
+####  2.解压安装
 
-所有的版本归档下载地址：http://www.oracle.com/technetwork/java/javase/archive-139210.html
-2.解压安装
-
-我们把JDK安装到这个路径：/usr/local/java
-如果没有这个目录（第一次当然没有），我们就新建一个目录
-
-cd /usr/local
+将jdk 文件放到根目录
 sudo mkdir java
 
 
 建立好了以后，我们来到刚才下载好的压缩包的目录，解压到我们刚才新建的文件夹里面去，并且修改好名字方便我们管理
 
-sudo tar zxvf ./jdk-7u80-linux-x64.tar.gz  -C /usr/local/java
-cd /usr/local/java
-sudo mv jdk1.7.0_80 jdk1.7.0
+sudo tar zxvf ./jdk-7u80-linux-x64.tar.gz  -C ./java
 
-3.配置环境变量
 
-vi ~/.bash_profile
+####  3.jdk 配置环境变量
 
+在Home界面，按Ctrl +H 按键 将隐藏文件显示出来 找到.bash_profile 文件
+
+*  可通过Vi 工具编辑
+
+  vi ~/.bash_profile
+*  可直接通过gedit 打开（默认可双击打开）
 
 在打开的文件的末尾添加 
 
-#set java environment
-export JAVA_HOME=/home/lambert/Java/jdk1.8.0_91
+      #set java environment
+      export JAVA_HOME=/home/lambert/Java/jdk1.8.0_91
 
-export JRE_HOME=/home/lambert/Java/jdk1.8.0_91/jre
+      export JRE_HOME=/home/lambert/Java/jdk1.8.0_91/jre
 
-export CLASSPATH=.:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+      export CLASSPATH=.:$JAVA_HOME/jre/lib/dt.jar:$JAVA_HOME/lib/tools.jar
 
-export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
+      export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 
-# export JAVA_OPTS=-server -Xms768m -Xmx768m -XX:PermSize=128M -XX:MaxNewSize=256m -XX:MaxPermSize=256m
-
-export ANDROID_HOME=/home/lambert/Android/android-sdk-linux
-export AAPT_HOME=/home/lambert/Android/android-sdk-linux/build-tools
-export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AAPT_HOME/23.0.3/aapt:$PATH
-
-
-# exchang java 
-
-update-alternatives --config java
+      # Android environment
+      export ANDROID_HOME=/home/lambert/Android/android-sdk-linux
+      export AAPT_HOME=/home/lambert/Android/android-sdk-linux/build-tools
+      export PATH=$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$AAPT_HOME/23.0.3/aapt:$PATH
 
 
 
- 4.配置默认JDK(一般情况下这一步都可以省略)
+### Android SDK 安装
 
-由于一些Linux的发行版中已经存在默认的JDK，如OpenJDK等。所以为了使得我们刚才安装好的JDK版本能成为默认的JDK版本，我们还要进行下面的配置。
-执行下面的命令：
+国内下载[http://tools.android-studio.org/index.php/sdk](http://tools.android-studio.org/index.php/sdk)
 
-sudo update-alternatives --install /usr/bin/java java /usr/local/java/jdk1.7.0/bin/java 300
-sudo update-alternatives --install /usr/bin/javac javac /usr/local/java/jdk1.7.0/bin/javac 300
-sudo update-alternatives --install /usr/bin/jar jar /usr/local/java/jdk1.7.0/bin/jar 300
-sudo update-alternatives --install /usr/bin/jcontrol jcontrol /usr/local/java/jdk1.7.0/bin/jcontrol 300
-sudo update-alternatives --install /usr/bin/jps jps /usr/local/java/jdk1.7.0/bin/jps 300
+*  下载最新SDK 并解压至Android目录
 
- 注意：如果以上两个命令出现找不到路径问题，只要重启一下计算机在重复上面两行代码就OK了。
+*   环境变量（同sdk且示例见上）
 
-也可以使用update-alternatives --remove命令，删除路径配置，如下：
+### 测试
 
-sudo update-alternatives --remove javac /usr/local/java/jdk1.7.0/bin/javac
-
-执行下面的代码可以看到当前各种JDK版本和配置：
-
-sudo update-alternatives --config java
-
-打开一个终端，输入下面命令： 
-5.测试
-
-java -version
+##### 1 在终端上输入 java -version
 
 显示结果：
 
-java version "1.7.0_80"
-Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
-Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
+      java version "1.7.0_80"
+      Java(TM) SE Runtime Environment (build 1.7.0_80-b15)
+      Java HotSpot(TM) 64-Bit Server VM (build 24.80-b11, mixed mode)
+      
+则说明jdk 安装成功
+
+
+##### 2 进入Android 目录终端上输入 ./android
+
+能打开android tools则成功
+
+
+###  AAPT 安装
+
+在终端上输入 apt-get install aapt
+
+安装完成后目录终端上输入 aapt 出现相关信息则说明正常安装
+      
